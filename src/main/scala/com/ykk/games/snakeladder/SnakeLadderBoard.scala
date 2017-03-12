@@ -1,4 +1,4 @@
-package com.ykk.games.SnakeNLadder
+package com.ykk.games.snakeladder
 
 /**
   * Created by kishoreyakkala on 10/03/17.
@@ -13,7 +13,7 @@ object Ladder extends MoveType
 
 object NormalMove extends MoveType
 
-trait GameKeeper {
+trait SnakeLadderBoard {
 
   val snakes: Map[Int, Int]
   val ladders: Map[Int, Int]
@@ -24,7 +24,7 @@ trait GameKeeper {
 
   def start(players: List[String]): List[Player]
 
-  def stop(winner: Player)
+  def stop(winner: Player): List[String]
 
   def isGameOver(): Boolean
 
