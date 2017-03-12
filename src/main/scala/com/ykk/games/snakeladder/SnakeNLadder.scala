@@ -52,11 +52,8 @@ case class SnakeNLadder(snakes: Map[Int, Int], ladders: Map[Int, Int], boardSize
 
   override def isGameOver(): Boolean = playerLocation.values.max == boardSize
 
-  override def stop(winner: Player): List[String] = {
-    List(s"Winner of the Game : ${winner.name}",
-      s"Total Players Played : ${playerLocation.map(_._1.name).mkString(" , ")}",
-      s"Time Took : ${System.currentTimeMillis() - startTime} mSec & total Moves : ${gameMoves.map(_._2.length).sum}"
-    ) ::: gameMoves(winner).toArray.reverse.map(m => s"${m._1.getClass.getSimpleName.replace("$", "")}: ${m._2} -> ${m._3}").toList
+  override def stop(winner: Player): (Player, Long, Map[Player, Array[(MoveType, Int, Int)]]) = {
+    (winner, System.currentTimeMillis() - startTime, gameMoves.map(p => (p._1 -> p._2.toArray)).toMap)
   }
 
 

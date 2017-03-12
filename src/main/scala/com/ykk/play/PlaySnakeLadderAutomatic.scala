@@ -40,8 +40,15 @@ object PlaySnakeLadderAutomatic {
     }
 
     game.startSnakeLader
-    game.snl.stop(rollOver(startPlayer)).foreach(println)
+    val rslt = game.snl.stop(rollOver(startPlayer))
 
+
+    val summary = List(s"Winner of the Game : ${rslt._1.name}",
+      s"Total Players Played : ${rslt._3.keys.map(_.name).mkString(" , ")}",
+      s"Time Took : ${rslt._2} mSec & total Moves : ${rslt._3.map(_._2.length).sum}"
+    ) ::: rslt._3(rslt._1).toArray.reverse.map(m => s"${m._1.getClass.getSimpleName.replace("$", "")}: ${m._2} -> ${m._3}").toList
+
+    summary.foreach(println)
   }
 
 

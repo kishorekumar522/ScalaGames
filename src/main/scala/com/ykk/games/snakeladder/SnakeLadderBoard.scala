@@ -24,7 +24,7 @@ trait SnakeLadderBoard {
 
   def start(players: List[String]): List[Player]
 
-  def stop(winner: Player): List[String]
+  def stop(winner: Player): (Player, Long, Map[Player, Array[(MoveType, Int, Int)]])
 
   def isGameOver(): Boolean
 

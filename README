@@ -1,2 +1,5 @@
 To play SnakeNLadder Game by computer in Scala
-run com.ykk.play.PlaySnakeLadderAutomatic.scala
+
+sbt 'run-main com.ykk.play.PlaySnakeLadderAutomatic'
+
+if you want to play game by user implement PlaySnakeLadderAutomatic according to it by taking input from user
