@@ -1,5 +1,5 @@
-To play SnakeNLadder Game by computer in Scala
-
+1. To Play SnakeNLadder Game by computer in Scala
 sbt 'run-main com.ykk.play.PlaySnakeLadderAutomatic'
-
 if you want to play game by user implement PlaySnakeLadderAutomatic according to it by taking input from user
+2. To Play TowerOfHanoi Game
+sbt 'run-main com.ykk.play.HanoiMain'
