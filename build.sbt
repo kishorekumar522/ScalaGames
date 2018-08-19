@@ -21,7 +21,6 @@ libraryDependencies ++= Seq(
 
   "org.slf4j" % "slf4j-api" % "1.7.21",
   "org.slf4j" % "slf4j-simple" % "1.7.21",
-
   "org.scala-lang" % "scala-library" % "2.11.8"
 )
 
